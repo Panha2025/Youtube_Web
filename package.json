@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "powershell.exe -ExecutionPolicy Bypass -File ./scripts/dev-chrome.ps1",
+    "fullstack": "powershell.exe -ExecutionPolicy Bypass -File ./scripts/dev-chrome.ps1",
     "dev:next": "next dev",
     "dev:laravel": "cd backend && php artisan serve --host=127.0.0.1 --port=8000",
     "build": "next build",

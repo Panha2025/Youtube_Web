@@ -19,7 +19,7 @@ while (-not (Test-PortAvailable -Port $port)) {
 }
 
 $url = "http://localhost:$port"
-$apiUrl = "http://localhost:8000"
+$apiUrl = "http://127.0.0.1:8000"
 
 if (Test-PortAvailable -Port 8000) {
   Write-Host "Starting Laravel API at $apiUrl"
@@ -35,7 +35,7 @@ if (Test-PortAvailable -Port 8000) {
 }
 
 $apiReady = $false
-for ($attempt = 1; $attempt -le 20; $attempt += 1) {
+for ($attempt = 1; $attempt -le 8; $attempt += 1) {
   try {
     $response = Invoke-WebRequest -Uri "$apiUrl/up" -UseBasicParsing -TimeoutSec 2
     if ($response.StatusCode -eq 200) {
@@ -43,7 +43,7 @@ for ($attempt = 1; $attempt -le 20; $attempt += 1) {
       break
     }
   } catch {
-    Start-Sleep -Milliseconds 500
+    Start-Sleep -Milliseconds 250
   }
 }
 
