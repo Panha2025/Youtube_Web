@@ -3,7 +3,8 @@
 import { useState } from "react";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ChevronDown, Facebook, Mail, Search, X, Youtube } from "lucide-react";
+import { ChevronDown, Mail, Search, X } from "lucide-react";
+import { FacebookLogo, YouTubeLogo } from "./BrandIcons";
 
 export function Navbar() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -57,21 +58,21 @@ export function Navbar() {
         <div className="flex items-center gap-3 text-black">
           <a
             aria-label="YouTube"
-            className="smooth-motion grid h-10 w-10 place-items-center rounded-full bg-black text-white transition hover:-translate-y-0.5 hover:bg-[#f04b23]"
+            className="smooth-motion grid h-11 w-11 place-items-center rounded-full bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-0.5 hover:shadow-md"
             href={youtubeUrl}
             rel="noreferrer"
             target="_blank"
           >
-            <Youtube className="h-5 w-5 fill-current" />
+            <YouTubeLogo className="h-7 w-7" />
           </a>
           <a
             aria-label="Facebook"
-            className="smooth-motion hidden h-10 w-10 place-items-center rounded-full bg-black text-white transition hover:-translate-y-0.5 hover:bg-[#f04b23] sm:grid"
+            className="smooth-motion hidden h-11 w-11 place-items-center rounded-full bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-0.5 hover:shadow-md sm:grid"
             href={facebookUrl}
             rel="noreferrer"
             target="_blank"
           >
-            <Facebook className="h-5 w-5 fill-current" />
+            <FacebookLogo className="h-7 w-7" />
           </a>
         </div>
       </nav>
@@ -85,8 +86,8 @@ export function Navbar() {
             </div>
 
             <div className="flex flex-1 flex-col gap-3 lg:flex-row lg:justify-center">
-              <ContactItem icon={<Youtube className="h-5 w-5 fill-current" />} label="YouTube" value="@POLIKASIM" href={youtubeUrl} />
-              <ContactItem icon={<Facebook className="h-5 w-5 fill-current" />} label="Facebook" value="Polika" href={facebookUrl} />
+              <ContactItem icon={<YouTubeLogo className="h-6 w-6" />} label="YouTube" value="@POLIKASIM" href={youtubeUrl} />
+              <ContactItem icon={<FacebookLogo className="h-6 w-6" />} label="Facebook" value="Polika" href={facebookUrl} />
               <ContactItem icon={<Mail className="h-5 w-5" />} label="Email" value={contactEmail} href={contactEmail.includes("@") ? `mailto:${contactEmail}` : undefined} />
             </div>
 
@@ -118,7 +119,7 @@ function ContactItem({
 }) {
   const content = (
     <span className="smooth-motion inline-flex min-h-12 items-center gap-3 rounded-2xl border border-stone-200 bg-[#fbfaf8] px-4 text-sm font-black text-stone-800 transition hover:-translate-y-0.5 hover:border-[#f04b23] hover:bg-white">
-      <span className="grid h-8 w-8 place-items-center rounded-full bg-black text-white">{icon}</span>
+      <span className="grid h-8 w-8 place-items-center rounded-full bg-white shadow-sm ring-1 ring-stone-200">{icon}</span>
       <span>
         <span className="mr-1 text-stone-500">{label}:</span>
         {value}

@@ -1,4 +1,4 @@
-import { Facebook, Youtube } from "lucide-react";
+import { FacebookLogo, YouTubeLogo } from "./BrandIcons";
 
 export function Footer() {
   return (
@@ -11,21 +11,21 @@ export function Footer() {
         <div className="flex gap-3">
           <a
             aria-label="YouTube channel"
-            className="smooth-motion grid h-11 w-11 place-items-center rounded-full bg-black text-white transition hover:-translate-y-0.5 hover:bg-[#f04b23]"
+            className="smooth-motion grid h-11 w-11 place-items-center rounded-full bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-0.5 hover:shadow-md"
             href={process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_URL || "https://www.youtube.com/@POLIKASIM"}
             rel="noreferrer"
             target="_blank"
           >
-            <Youtube className="h-5 w-5 fill-current" />
+            <YouTubeLogo className="h-7 w-7" />
           </a>
           <a
             aria-label="Facebook"
-            className="smooth-motion grid h-11 w-11 place-items-center rounded-full bg-black text-white transition hover:-translate-y-0.5 hover:bg-[#f04b23]"
+            className="smooth-motion grid h-11 w-11 place-items-center rounded-full bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-0.5 hover:shadow-md"
             href={process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://www.facebook.com/"}
             rel="noreferrer"
             target="_blank"
           >
-            <Facebook className="h-5 w-5 fill-current" />
+            <FacebookLogo className="h-7 w-7" />
           </a>
         </div>
       </div>
